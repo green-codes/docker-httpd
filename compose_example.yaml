@@ -1,0 +1,9 @@
+services:
+  httpd-test:
+    image: greencodes/httpd:latest
+#    ports:
+#      - "8123:80"
+#      - "8124:443"
+    volumes:
+      - ./httpd.conf:/etc/apache2/httpd.conf
+      - ./certs:/etc/certs
