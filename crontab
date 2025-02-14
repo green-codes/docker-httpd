@@ -1,3 +1,0 @@
-# gracefully restart httpd at specified UTC time
-# m h  dom mon dow   command
-42 20 * * * httpd -k graceful

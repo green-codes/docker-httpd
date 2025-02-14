@@ -9,7 +9,7 @@ RUN \
     --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 # add crontab for periodic httpd restart (graceful)
-ADD ./crontab /var/spool/cron/crontabs/root
+RUN echo "42 20 * * * httpd -k graceful" > /var/spool/cron/crontabs/root
 
 # https://httpd.apache.org/docs/2.4/stopping.html#gracefulstop
 STOPSIGNAL SIGWINCH
