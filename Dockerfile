@@ -15,7 +15,7 @@ RUN echo "42 20 * * * httpd -k graceful" > /var/spool/cron/crontabs/root
 STOPSIGNAL SIGWINCH
 
 # start crond, then hand over execution to httpd
-ENTRYPOINT ["/bin/sh", "-c", "crond; exec /usr/sbin/httpd -DFOREGROUND"]
+CMD ["/bin/sh", "-c", "crond; exec /usr/sbin/httpd -DFOREGROUND"]
 
 # https://docs.docker.com/engine/reference/builder/#healthcheck
 HEALTHCHECK --start-period=5s --start-interval=1s \
