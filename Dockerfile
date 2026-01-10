@@ -5,7 +5,7 @@ FROM alpine:latest
 # TODO: apache-mod-auth-openidc is currently in testing repo only
 RUN \
   set -eux; \
-  apk add --no-cache curl apache2 apache2-ssl apache2-http2 apache2-proxy apache-mod-auth-openidc \
+  apk add --no-cache curl apache2 apache2-ssl apache2-http2 apache2-proxy php7-apache2 apache-mod-auth-openidc \
     --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 # add crontab for periodic httpd restart (graceful)
